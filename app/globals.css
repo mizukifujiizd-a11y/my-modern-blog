@@ -1,26 +1,79 @@
-@import "tailwindcss";
+@import "tailwindcss"; /* これだけでTailwindが動くようになります */
+/* ⬇これを追記することで「prose」という装飾命令が使えるようになります */
+@plugin "@tailwindcss/typography";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+   --background: 0 0% 98%; /* 真っ白より少しだけグレーにすると高級感が出ます */
+  --foreground: 0 0% 15%; /* 文字色を少し柔らかい黒に */
+  --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 90%;;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Markdown内のコードブロックを綺麗にする設定 */
+pre {
+  background-color: #1a202c !important; /* 深い紺色 */
+  padding: 1.5rem !important;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+code {
+  color: #e2e8f0;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+/* シングルクォーテーションで囲まれた文字の色を変更 */
+/* 注: Markdown内で 'text' と書いた場合に適用されます */
+.prose {
+  color: #333; /* 全体の基本色 */
+}
+
+/* インラインコード（バッククォート）の強制上書き */
+.prose :not(pre) > code {
+  background-color: transparent !important;
+  color: white !important;
+  padding: 0 !important;
+}
+
+/* シングルクォーテーションのスタイル（疑似的に色を適用する場合） */
+/* もしMarkdown側で <span> 等を使わない場合は、手動で色を塗る必要がありますが、
+   ここでは自動で判別は難しいため、もし特定の単語の色を変えたい場合は
+   Markdown内で <span style="color:#191970">text</span> と書くか、
+   以下の設定で「特定の記号」に色をつけます */
+
+/* 段落内の余白をさらに詰めたい場合 */
+.prose p {
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* リストアイテム間の余白を強制的にゼロにする */
+.prose li p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.25rem !important;
 }
