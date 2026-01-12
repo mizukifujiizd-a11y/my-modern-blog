@@ -2,7 +2,7 @@
 title: "Vercel Analyticsを有効にする作業"
 date: "2026-01-12"
 excerpt: "Vercel Analyticsを有効にするためにやっとことをメモしておきます。"
-image: <img src="/2.jpeg" alt="サンプル画像" />
+image: "/2.jpeg"
 ---
 
 ## 1. Vercelダッシュボードでの有効化
