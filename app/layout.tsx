@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Noto_Serif_JP } from "next/font/google"; // 高級感のあるセリフ体フォント
 import "./globals.css";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // フォントの設定（日本語に対応させるため、太さを指定）
 const serif = Noto_Serif_JP({
@@ -40,6 +42,9 @@ export default function RootLayout({
             © 2026 MY BLOG. PROUDLY CREATED WITH NEXT.JS
           </p>
         </footer>
+        {/* 2. 追加：計測用コンポーネント（footerの下に配置） */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
