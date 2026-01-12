@@ -49,9 +49,16 @@ export default function RootLayout({
 }
 ```
 
-## 4. 変更を保存してコミットする
-VS Codeなどのターミナルで、以下のコマンドを順番に実行します。
+## 4. ライブラリをインストールし直す
+まず、確実に自分のプロジェクトにライブラリを追加します。
 
+```bash
+npm install @vercel/analytics @vercel/speed-insights
+```
+
+
+## 5. 変更を保存してコミットする
+VS Codeなどのターミナルで、以下のコマンドを順番に実行します。
 ```bash
 
 # 1. 変更したファイルをステージング（準備）する
