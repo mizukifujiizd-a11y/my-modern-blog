@@ -2,7 +2,7 @@
 title: "Vercel Analyticsを有効にする作業"
 date: "2026-01-12"
 excerpt: "Vercel Analyticsを有効にするためにやっとことをメモしておきます。"
-image: "https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E3%83%99%E3%83%83%E3%83%89%E3%81%AE%E4%B8%8A%E3%81%AB%E5%BA%A7%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%83%A9%E3%83%83%E3%83%97%E3%83%88%E3%83%83%E3%83%97%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF-qkeiNu2s_-E"
+image: <img src="/2.jpeg" alt="サンプル画像" />
 ---
 
 ## 1. Vercelダッシュボードでの有効化
